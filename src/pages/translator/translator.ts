@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
-
 /**
  * Generated class for the TranslatorPage page.
  *
@@ -16,11 +14,8 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
   templateUrl: 'translator.html',
 })
 export class TranslatorPage {
-  
-  translations: FirebaseListObservable<any[]>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, afDB: AngularFireDatabase) {
-    this.translations = afDB.list('/kreol-vocabulary-list');
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {

@@ -7,7 +7,11 @@
 </ion-header>
 
 <ion-content padding>
-  <h1>Hello {{displayName}}</h1> 
+	<h2 ng-if="displayName !== undefined"> Login as {{ displayName }}</h2>
+	<div id="login_picture"><img src="assets/img/apran_dir.jpg" alt=""></div>
+	<button ion-button block (click)="signInWithGmail()" class="loginBtn loginBtn--google">
+		Login with Google
+	</button>
 	<button ion-button block (click)="signInWithFacebook()" class="loginBtn loginBtn--facebook">
     Login with facebook
   </button>

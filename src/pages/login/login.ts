@@ -7,6 +7,8 @@ import * as firebase from 'firebase/app';
 import { Platform } from 'ionic-angular';
 import { Facebook } from '@ionic-native/facebook';
 
+import { TabsPage } from '../tabs/tabs';
+
 /**
  * Generated class for the LoginPage page.
  *
@@ -27,10 +29,12 @@ export class LoginPage {
   private afAuth: AngularFireAuth, private fb: Facebook, private platform: Platform) {
     afAuth.authState.subscribe(user=>{
       if(!user){
+        // this.navCtrl.setRoot(LoginPage);
         this.displayName = null;
         return;
       }
-      this.displayName = user.displayName;
+      this.displayName = user.displayName; 
+      // this.navCtrl.setRoot(TabsPage);
     });
   }
   
