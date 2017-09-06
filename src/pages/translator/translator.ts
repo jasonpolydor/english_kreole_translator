@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+
 /**
  * Generated class for the TranslatorPage page.
  *
@@ -14,8 +16,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'translator.html',
 })
 export class TranslatorPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  items: FirebaseListObservable<any[]>;
+  
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+  afDB: AngularFireDatabase) {
+    this.items = afDB.list('/translations');
   }
 
   ionViewDidLoad() {
