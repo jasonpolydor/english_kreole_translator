@@ -51,7 +51,7 @@ export class TranslatorPage {
     // if the value is an empty string don't filter the items
     if (val && val.trim() != '') {
       this.translationList = this.translationList.filter((item) => {
-        return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
+        return (item.en.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
     }
   }
