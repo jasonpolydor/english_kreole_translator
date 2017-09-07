@@ -7,8 +7,6 @@ import * as firebase from 'firebase/app';
 import { Platform } from 'ionic-angular';
 import { Facebook } from '@ionic-native/facebook';
 
-import { TabsPage } from '../tabs/tabs';
-
 /**
  * Generated class for the LoginPage page.
  *
