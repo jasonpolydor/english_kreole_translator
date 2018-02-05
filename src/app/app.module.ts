@@ -16,6 +16,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { Facebook } from '@ionic-native/facebook';
+import { RestProvider } from '../providers/rest/rest';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyCTN8OIMmNW_SnQeFO4XLrjLCXVH_KEj2c",
@@ -53,7 +54,8 @@ export const firebaseConfig = {
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    Facebook
+    Facebook,
+    RestProvider
   ]
 })
 export class AppModule {}
