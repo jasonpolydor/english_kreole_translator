@@ -14,5 +14,17 @@
 
 
 <ion-content padding>
-    <h2>WELCOME {{ displayName }}</h2>
+    <h2>Countries</h2>
+    <ion-list>
+        <ion-item *ngFor="let c of countries">
+            <ion-avatar item-left>
+                <img src="{{c.flag}}">
+            </ion-avatar>
+            <h2>{{c.name}}</h2>
+            <p>Capital: {{c.capital}}</p>
+            <p>Region: {{c.region}}</p>
+            <p>Sub Region: {{c.subregion}}</p>
+            <p>Populations: {{c.population}}</p>
+        </ion-item>
+    </ion-list>
 </ion-content>
